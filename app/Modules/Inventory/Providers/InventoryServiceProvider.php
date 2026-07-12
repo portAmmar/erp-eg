@@ -2,6 +2,8 @@
 
 namespace Modules\Inventory\Providers;
 
+use App\Modules\Inventory\Contracts\InventoryInterface;
+use App\Modules\Inventory\Services\InventoryService;
 use Illuminate\Support\ServiceProvider;
 
 class  InventoryServiceProvider extends ServiceProvider
@@ -9,7 +11,11 @@ class  InventoryServiceProvider extends ServiceProvider
 
     public function register()
     {
-        parent::register();
+        $this->app->bind(
+ InventoryInterface::class,
+InventoryService::class
+
+        );
     }
     public function boot()
     {
