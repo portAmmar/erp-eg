@@ -2,7 +2,7 @@
 
 namespace App\Modules\Inventory\Contracts;
 
-interface InventoryInterface
+interface ProductInterface
 {
     public function deductStock($productId, $quantity);
 }
