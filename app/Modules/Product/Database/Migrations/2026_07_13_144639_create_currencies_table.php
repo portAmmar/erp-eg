@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_currencies', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 3);
+            $table->string('symbol', 10);
+            $table->unsignedTinyInteger('decimal_places')->default(2);
             $table->timestamps();
         });
     }
