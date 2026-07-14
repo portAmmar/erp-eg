@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('uom_conversions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('from_uom_id')->constrained('uoms');
+            $table->foreignId('to_uom_id')->constrained('uoms');
+            $table->decimal('conversion_factor');
+
+
             $table->timestamps();
         });
     }

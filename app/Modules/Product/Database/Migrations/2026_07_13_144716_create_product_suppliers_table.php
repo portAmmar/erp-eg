@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('product_suppliers', function (Blueprint $table) {
             $table->id();
+            $this->string('supplier_sku')->unique();
+            $table->foreignId('product_variant_id')->constrained('product_variants');
+            $table->foreignId('supplier_id')->constrained('suppliers');
+            $table->decimal('cost_price', 19, 4);
+            $tabela->unsignedSmallInteger('lead_time_days')->default(0);
             $table->timestamps();
         });
     }
