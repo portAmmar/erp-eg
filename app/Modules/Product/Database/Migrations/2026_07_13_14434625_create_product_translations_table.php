@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_translations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->constrained('products');
+            $table->string('local')->default('ar');
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
