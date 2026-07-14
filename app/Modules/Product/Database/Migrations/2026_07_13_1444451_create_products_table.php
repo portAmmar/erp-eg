@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('sku')->unique();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('product_type');
+            $table->string('status')->default('draft');
+            $table->foreignId('category_id')->constrained();
+            $table->foreignId('base_uom_id')->constrained('uoms');
+            $table->foreignId('created_by')->constrained('users');
+            $table->foreignId('updated_by')->constrained('users');
             $table->timestamps();
         });
     }
