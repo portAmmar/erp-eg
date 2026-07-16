@@ -1,5 +1,5 @@
 <?php
-
+namespace Modules\Product\Enums;
 enum ProductStatus
 {
     case RawMaterial = 'raw_material';

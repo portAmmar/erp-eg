@@ -1,4 +1,5 @@
 <?php
+namespace Modules\Product\Enums;
 
 enum ProductType
 {
