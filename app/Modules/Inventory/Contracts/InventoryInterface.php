@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Inventory\Contracts;
+namespace Modules\Inventory\Contracts;
 
 interface InventoryInterface
 {
-    public function deductStock($productId, $quantity);
+//    public function deductStock($productId, $quantity);
 }

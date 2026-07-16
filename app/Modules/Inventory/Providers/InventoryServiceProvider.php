@@ -12,8 +12,8 @@ class  InventoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
- InventoryInterface::class,
-InventoryService::class
+        InventoryInterface::class,
+        InventoryService::class
 
         );
     }

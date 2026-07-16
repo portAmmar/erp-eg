@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Inventory\Services;
+namespace Modules\Product\Services;
 
 class ProductService
 {

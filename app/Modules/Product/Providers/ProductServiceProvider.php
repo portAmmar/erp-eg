@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Inventory\Providers;
+namespace Modules\Product\Providers;
 
 use App\Modules\Product\Contracts\ProductInterface;
 use App\Modules\Product\Services\ProductService;
