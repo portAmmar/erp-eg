@@ -6,20 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Product\Models\Product;
 
-class Category extends Model
+class Uom extends Model
 {
 
-    protected $table = 'categories';
+    protected $table = 'uoms';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'parent_category_id',
+        'code',
         'name',
+        'uom_category_id',
     ];
-
 
 
     public function products() :HasMany
     {
-    return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class);
     }
 }
