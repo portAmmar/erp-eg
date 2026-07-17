@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Modules\Product\Models\Product;
 use Modules\Product\Models\priceListItems;
 use Modules\Product\Models\ProductVariant;
+use Modules\Product\Models\Supplier;
 
 class ProductSupplier extends Model
 {
@@ -28,5 +29,10 @@ class ProductSupplier extends Model
     public function productVariant(): BelongsTo
     {
         $this->belongsTo(ProductVariant::class);
+    }
+
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(Supplier::class);
     }
 }
