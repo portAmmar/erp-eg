@@ -31,6 +31,7 @@ class Product extends Model
     {
     return $this->hasMany(ProductVariant::class);
     }
+
     public function uomConversions(): HasMany
     {
     return $this->hasMany(uomConversion::class);

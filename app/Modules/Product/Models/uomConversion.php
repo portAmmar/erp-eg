@@ -3,6 +3,7 @@
 namespace Modules\Product\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Modules\Product\Models\Product;
 
@@ -19,8 +20,8 @@ class uomConversion extends Model
     ];
 
 
-    public function product() :HasOne
+    public function product() :BelongsTo
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }
