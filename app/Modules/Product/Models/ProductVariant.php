@@ -3,8 +3,11 @@
 namespace Modules\Product\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Modules\Product\Models\Product;
+use Modules\Product\Models\PriceListItem;
+use Modules\Product\Models\ProductSupplier;
 
 class ProductVariant extends Model
 {
@@ -19,8 +22,17 @@ class ProductVariant extends Model
     ];
 
 
-    public function product() :HasOne
+    public function product() :BelongsTo
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
+    }
+
+    public function priceListItems(): HasMany
+    {
+        $this->hasMany(priceListItem::class);
+    }
+    public function productSuppliers(): HasMany
+    {
+        $this->hasMany(ProductSupplier::class);
     }
 }
