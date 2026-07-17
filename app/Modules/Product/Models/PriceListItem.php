@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Modules\Product\Models\Product;
-use Modules\Product\Models\priceListItems;
+use Modules\Product\Models\PriceListItems;
 use Modules\Product\Models\ProductVariant;
+use Modules\Product\Models\PriceList;
 
 class PriceListItem extends Model
 {
@@ -29,6 +30,11 @@ class PriceListItem extends Model
     public function product() :HasOne
     {
         return $this->hasOne(Product::class);
+    }
+
+    public  function priceList(): BelongsTo
+    {
+        $this->belongsTo(PriceList::class);
     }
 
     public function productVariant(): BelongsTo
