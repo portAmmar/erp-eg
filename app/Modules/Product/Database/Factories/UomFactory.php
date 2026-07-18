@@ -3,6 +3,7 @@
 namespace Modules\Product\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Product\Models\UomCategory;
 
 class UomFactory extends Factory
 {
@@ -12,7 +13,7 @@ class UomFactory extends Factory
         return [
             'code' => $this->faker->unique()->bothify('???-#####'),
             'name' => $this->faker->word(),
-            'uom_category_id' => $this->faker->text(),
+            'uom_category_id' => UomCategory::factory(),
         ];
     }
 
