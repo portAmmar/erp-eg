@@ -1,8 +1,8 @@
 <?php
 
 namespace Modules\Product\Services;
-
-class ProductService
+use Modules\Product\Contracts\ProductInterface;
+class ProductService implements ProductInterface
 {
 
 }
