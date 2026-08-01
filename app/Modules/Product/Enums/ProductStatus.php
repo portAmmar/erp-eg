@@ -2,9 +2,11 @@
 namespace Modules\Product\Enums;
 enum ProductStatus
 {
-    case RawMaterial = 'raw_material';
-    case FinishedGood = 'finished_good';
-    case Service = 'service';
-    case TradingGood = 'trading_good';
+
+
+    case Draft = 'draft';
+    case Active = 'active';
+    case Discontinued = 'discontinued';
+    case Obsolete = 'obsolete';
 
 }
