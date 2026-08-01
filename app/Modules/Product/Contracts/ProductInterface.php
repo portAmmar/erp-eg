@@ -1,6 +1,7 @@
 <?php
 
 namespace Modules\Product\Contracts;
+use Modules\Product\DTOs\CreateProdcuctDTO;
 use Modules\Product\Models\Product;
 interface ProductInterface
 {
